@@ -1,14 +1,17 @@
 import { format, parseISO } from 'date-fns';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router'
-import Image from 'next/image'
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
-import { api } from '../../services/api'
+import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDurationTotTimeString';
 import { ptBR } from 'date-fns/locale';
+import { usePlayer } from '../../contexts/PlayerContext';
 
 import styles from './episode.module.scss';
+import React from 'react';
 
 type Episode = {
     id: string;
@@ -23,17 +26,17 @@ type Episode = {
 };
 
 type EpisodeProps = {
-    episode;
+    episode: Episode;
 }
 
 export default function Episode ({ episode }: EpisodeProps) {
-    const router = useRouter();
+    const router = usePlayer();
 
-    if(router.isFallback){
-        return <p>A carregar...</p>
-    }
     return (
         <div className={styles.episode}>
+            <Head>
+                <title>{episode.title}</title>
+            </Head>
             <div className={styles.thumbnailContainer}>
                 <Link href="/">
                     <button type="button">
@@ -46,7 +49,7 @@ export default function Episode ({ episode }: EpisodeProps) {
                 src={episode.thumbnail}
                 objectFit="cover"
                 />
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}>
                     <img src="/play.svg" alt="Tocar episódio"/>
                 </button>
             </div>
@@ -84,11 +87,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         }
     })
     
-    return { 
-        paths,
-        fallback: 'blocking'
-    }
-
     return {
         paths: [],
         fallback: 'blocking'
@@ -118,3 +116,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
         revalidate: 60 * 60 * 24,
     }
 }
+function play(episode: Episode): void {
+    throw new Error('Function not implemented.');
+  }
