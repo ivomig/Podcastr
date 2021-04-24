@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  ![alt text](https://github.com/ivomig/Podcastr/blob/master/public/podcastr_img.PNG?raw=true)
+    <img alt="Podcastr" title="Podcastr" src="https://github.com/ivomig/Podcastr/blob/master/public/podcastr_img.PNG" />
 </p>
 
 <br>
