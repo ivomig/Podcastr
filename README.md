@@ -1,10 +1,9 @@
 <h1 align="center">
-    <img alt="Podcastr" title="Podcastr" src=".github/podcastr.svg" />
+    <img alt="Podcastr" title="Podcastr" src="https://github.com/ivomig/Podcastr/blob/master/public/logo.svg" />
 </h1>
 
 <p align="center">
-  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=5965E0&labelColor=121214" alt="License">
-  ![alt text](https://github.com/ivomig/Podcastr/blob/master/public/podcastr_img.png?raw=true)
+  ![alt text](https://github.com/ivomig/Podcastr/blob/master/public/podcastr_img.PNG?raw=true)
 </p>
 
 <br>
@@ -38,6 +37,6 @@ This is a project developed during the **[Next Level Week](https://nextlevelweek
 
 ## 🔖 Layout
 
-You can see the project layout through the links below:
+You can see the project layout through the link below:
 
 - [Layout Web](https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761) 
